@@ -1,11 +1,12 @@
 FROM ghcr.io/xtls/xray-core:latest
 
-WORKDIR /etc/xray
+WORKDIR /Koshibar/Vmess
 
-COPY config.json /etc/xray/config.json
+COPY config.json /Koshibar/Vmess/config.json
+COPY start.sh /Koshibar/Vmess/start.sh
 
-ENV PORT=8080
+RUN chmod +x /Koshibar/Vmess/start.sh
 
 EXPOSE 8080
 
-CMD ["sh", "-c", "sed -i \"s/\\\"port\\\": 8080/\\\"port\\\": ${PORT}/\" /etc/xray/config.json && exec xray run -config /etc/xray/config.json"]
+ENTRYPOINT ["/Koshibar/Vmess/start.sh"]
