@@ -1,5 +1,4 @@
-KOSHIBAR-Vmess
-│
+KOSHIBAR-Vmess/
 ├── Dockerfile
 ├── config.json
-└── start.sh
+└── README.md
